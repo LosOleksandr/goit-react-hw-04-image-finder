@@ -5,6 +5,7 @@ import fetchImages from 'api/finder-api';
 import ImageGallery from './ImageGallery/ImageGallery';
 import LoadMore from './LoadMore/LoadMore';
 import Loader from './Loader/Loader';
+import { Container } from './App.styled';
 
 export default function App() {
   const [value, setValue] = useState('');
@@ -39,20 +40,24 @@ export default function App() {
     getImages();
   }, [value, page, getImages]);
 
-  
-
   return (
     <main>
-      {loading && <Loader />}
-      <SearchForm setValue={setValue} setPage={setPage} setImages={setImages} />
-      {images.length !== 0 && (
-        <>
-          <p>Result for {value}</p>
-          <ImageGallery images={images} />
-        </>
-      )}
-      {error && <h2>{error}</h2>}
-      {isLoadmoreShown && <LoadMore setPage={setPage} />}
+      <Container>
+        {loading && <Loader />}
+        <SearchForm
+          setValue={setValue}
+          setPage={setPage}
+          setImages={setImages}
+        />
+        {images.length !== 0 && (
+          <>
+            <p>Result for {value}</p>
+            <ImageGallery images={images} />
+          </>
+        )}
+        {error && <h2>{error}</h2>}
+        {isLoadmoreShown && <LoadMore setPage={setPage} />}
+      </Container>
     </main>
   );
 }

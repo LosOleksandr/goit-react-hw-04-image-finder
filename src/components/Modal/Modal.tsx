@@ -11,7 +11,6 @@ const Modal: React.FC<ModalProps> = ({ handleModal, children }) => {
   };
 
   const onEscapePress = (evt: KeyboardEvent) => {
-    console.log("111")
     if (evt.code === 'Escape') handleModal(false);
   };
 
