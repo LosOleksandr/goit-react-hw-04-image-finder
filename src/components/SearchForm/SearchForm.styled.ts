@@ -52,7 +52,7 @@ export const Form = styled.form`
   small {
     margin-top: 5px;
     position: absolute;
-    left: 42.7%;
+    left: 43.4%;
     top: 100%;
   }
 `;
