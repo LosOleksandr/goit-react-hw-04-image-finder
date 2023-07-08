@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { Image } from 'interfaces/Image';
 import { Form, SearchIcon } from './SearchForm.styled';
-import { GoSearch } from 'react-icons/go';
 
 interface SearchFormProps {
   setValue: React.Dispatch<React.SetStateAction<string>>;
