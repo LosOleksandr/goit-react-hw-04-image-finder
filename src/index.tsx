@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import App from './components/App';
+import App from 'components/App/App';
 import emotionReset from 'emotion-reset';
 import { Global, css } from '@emotion/react';
 // import { AppProvider } from './context/AppContext';
