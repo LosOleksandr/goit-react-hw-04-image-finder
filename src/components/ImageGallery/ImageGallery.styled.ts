@@ -15,10 +15,7 @@ export const GalleryList = styled.ul`
 
   column-gap: 10px;
   row-gap: 20px;
-  img {
-    display: block;
-    object-fit: cover;
-    width: 100%;
-    height: 280px;
-  }
+  transition: transform 0.3s ease;
 `;
+
+

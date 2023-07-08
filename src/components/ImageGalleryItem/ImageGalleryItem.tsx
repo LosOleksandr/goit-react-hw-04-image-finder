@@ -1,6 +1,7 @@
 import Modal from 'components/Modal/Modal';
 import { Image } from 'interfaces/Image';
 import React, { useState } from 'react';
+import { GalleryListImage, ModalImage } from './ImageGalletyItem.styled';
 
 interface ImageGalleryItemProps {
   image: Image;
@@ -9,6 +10,12 @@ interface ImageGalleryItemProps {
 const ImageGalleryItem: React.FC<ImageGalleryItemProps> = ({ image }) => {
   const { tags, webformatURL, largeImageURL } = image;
   const [isModalShowm, setIsModalShowm] = useState(false);
+
+  if (isModalShowm) {
+    document.body.style.overflow = 'hidden';
+  } else {
+    document.body.style.overflow = 'visible';
+  }
 
   const onImageClick = (evt: React.MouseEvent) => {
     evt.preventDefault();
@@ -19,12 +26,12 @@ const ImageGalleryItem: React.FC<ImageGalleryItemProps> = ({ image }) => {
     <>
       <li>
         <a href={largeImageURL} onClick={onImageClick}>
-          <img src={webformatURL} alt={tags} />
+          <GalleryListImage src={webformatURL} alt={tags} />
         </a>
       </li>
       {isModalShowm && (
         <Modal handleModal={setIsModalShowm}>
-          <img src={largeImageURL} alt={tags} />
+          <ModalImage src={largeImageURL} alt={tags} />
         </Modal>
       )}
     </>

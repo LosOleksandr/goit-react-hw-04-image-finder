@@ -11,8 +11,12 @@ const Modal: React.FC<ModalProps> = ({ handleModal, children }) => {
   };
 
   const onEscapePress = (evt: KeyboardEvent) => {
-    if (evt.code === 'Escape') handleModal(false);
+    if (evt.code === 'Escape') {
+      handleModal(false);
+    }
   };
+
+  
 
   useEffect(() => {
     window.addEventListener('keydown', onEscapePress);
